@@ -2,6 +2,7 @@
 
 namespace App\Models\Teachers;
 
+use App\Models\Teacher\paimethod;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -32,6 +33,11 @@ class teacher extends Model
     //Relationsheep Librarys
       public function librarys(){
         return $this->hasMany(library::class);
+    }
+
+    //Relationsheep Paimethods
+    public function paimethods(){
+        return $this->hasMany(paimethod::class);
     }
     
 

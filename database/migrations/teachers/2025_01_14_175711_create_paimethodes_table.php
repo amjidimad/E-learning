@@ -13,13 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('librarys', function (Blueprint $table) {
+        Schema::create('paimethodes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('title');
-            $table->string('image_path');
-            $table->string('description');
-            $table->string('book_path');
+            $table->string('owner');
+            $table->float('amount');
+            $table->string('RIB');
+            $table->string('wallet');
+            $table->string('Cryptocurrency');
+            $table->float('pending_balance');
+            $table->float('paid_balance');
+            $table->date('last_paiment');
             $table->timestamps();
         });
     }
@@ -31,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('librarys');
+        Schema::dropIfExists('paimethodes');
     }
 };
