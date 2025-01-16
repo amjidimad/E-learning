@@ -15,7 +15,15 @@ return new class extends Migration
             $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('lesson_id')->constrained('lessons')->onDelete('cascade')->onUpdate('cascade');
             $table->string('title');
-            $table->string('');
+            $table->text('description');
+            $table->string('langue');
+            $table->string('video_path');
+            $table->string('image_path');
+            $table->text('prerequis');
+            $table->float('reduction');
+            $table->float('price');
+            $table->float('duree');
+            $table->string('level');
             $table->timestamps();
         });
     }
